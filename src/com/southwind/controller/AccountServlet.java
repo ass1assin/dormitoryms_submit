@@ -53,6 +53,7 @@ public class AccountServlet extends HttpServlet {
 //                                请求被转发到 "login.jsp" 页面，在目标页面执行完成后，响应将发送回客户端。
                                 req.getRequestDispatcher("login.jsp").forward(req, resp);
                                 break;
+
                             case 0:
                                 //跳转到登录成功界面
                                 //checkcode_session.equalsIgnoreCase(checkcode)忽略字符串中的大小写差异且比较括号内容是否相等
