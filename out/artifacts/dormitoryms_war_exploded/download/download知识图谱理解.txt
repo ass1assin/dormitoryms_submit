@@ -1,0 +1,17 @@
+chatbot_graph（程序运行脚本）->question_classifier（实体提取、意图分类）->question_parser（问句解析、Cypher语言查询返回结果）->answer_search（得到查询结果、答案组装）
+实体提取 1.获取问句中包含的领域词及其所在领域 2.并收集问句当中所涉及到的实体类型3.基于特征词进行分类
+意图分类 1.建立意图特征词（7类实体词） 1.5意图分类（15种意图模块）2.模板匹配
+特征词除了7类实体还包括由全部7类实体词构成的领域词region_words、否定词库deny_words。
+
+若类型为症状，那么则将该症状的对应的疾病信息返回（question_types = ['symptom_disease']）然后将分类结果进行合并处理，组装成一个字典返回
+处理deny.txt其他
+
+answer_prettify函数将查询结果和答案话术结合起来
+
+
+
+数据获取
+1.data_spider.py爬取相关信息到数据库（项目使用的是urllib库，存在MongoDB数据库）
+2.max_cut.py基于词典的最大前向/后向匹配(即在爬取的数据中选举数据)(系统检索出的结果从左数前若干个字符都符合您的检索条件，但其余部分不一定都符合条件，检索结果数量要比精确匹配多。)
+3.build_data.py把数据库内容处理到medical.json
+build_medicalgraph.py逐行读取json数据

@@ -1,0 +1,112 @@
+                <!-- update框示例（Modal） -->
+                <form method="post" action="/student?method=update" style="margin-top: 0px" style="margin: 20px;">
+                    <div id="updateUserModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div>
+                            <div>
+                                <div>
+                                    <h4 id="myModalLabel">用户信息</h4>
+                                </div>
+                                <div>
+                                    <form>
+                                        <div>
+                                            <label for="user_id" >ID</label>
+                                            <div>
+                                                <input type="text" readonly required id="id" name="id">
+                                                <input type="hidden" name="oldDormitoryId" id="oldDormitoryId"/>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="user_id" >宿舍</label>
+                                            <div>
+                                                <select name="dormitoryId">
+                                                    <c:forEach items="${dormitoryList}" var="dormitory">
+                                                        <option class="dormitory" value="${dormitory.id}">${dormitory.name}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="user_id">学号</label>
+                                            <div>
+                                                <input type="text" required id="number" name="number" value="" placeholder="请输入学号">
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="user_id">姓名</label>
+                                            <div>
+                                                <input type="text" required id="name" name="name" value="" placeholder="请输入姓名">
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="user_id" >性别</label>
+                                            <div >
+                                                <input type="radio" checked value="男" name="gender"> 男
+                                                &nbsp;&nbsp;&nbsp;<input type="radio" value="女" name="gender"> 女
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="user_id">入住时间</label>
+                                            <div>
+                                                <input type="text" readonly id="createDate">
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div>
+                                    <button type="button" data-dismiss="modal">取消</button>
+                                    <button type="submit">提交</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- 删除模态框示例（Modal） -->
+                <form method="post" action="/student?method=delete" style="margin-top: 0px" role="form"
+                      id="form_data" style="margin: 20px;">
+                    <div id="delUserModal" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div >
+                            <div>
+                                <div>
+                                    <button type="button" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 id="myModalLabel2">用户信息</h4>
+                                </div>
+                                <div>
+                                    <form role="form">
+                                        <div >
+                                            <div >
+                                                <h3 id="deleteLabel">删除信息</h3>
+                                                <input type="hidden" id="tab" name="tab" placeholder="" value="dor_admin"> <input
+                                                    type="hidden" id="id"
+                                                    name="id" placeholder="">
+<%--                                                <input type="hidden" name="dormitoryId" id="dormitoryId"/>--%>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div>
+                                    <button type="button"data-dismiss="modal">取消</button>
+                                    <button type="submit">删除</button>
+                                    <span id="tip"> </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
