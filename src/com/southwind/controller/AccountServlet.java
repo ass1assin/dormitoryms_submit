@@ -57,6 +57,7 @@ public class AccountServlet extends HttpServlet {
                                 //跳转到登录成功界面
                                 //checkcode_session.equalsIgnoreCase(checkcode)忽略字符串中的大小写差异且比较括号内容是否相等
                                 //checkcode_session是图片里的验证码
+
                                 if(checkcode_session!= null && checkcode_session.equalsIgnoreCase(checkcode)){
 //                                    不必将输入的值存入session,直接比对就好
 //                                session.setAttribute("systemAdmin", systemAdminDto.getSystemAdmin());
