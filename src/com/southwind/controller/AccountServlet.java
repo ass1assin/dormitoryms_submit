@@ -54,6 +54,7 @@ public class AccountServlet extends HttpServlet {
                                 req.getRequestDispatcher("login.jsp").forward(req, resp);
                                 break;
 
+
                             case 0:
                                 //跳转到登录成功界面
                                 //checkcode_session.equalsIgnoreCase(checkcode)忽略字符串中的大小写差异且比较括号内容是否相等
